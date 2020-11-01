@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var i = 0;
+        var par = [];
+        function createParagraph (){           
+            var x = document.getElementById("par1");
+            
+            par[i] = document.createElement("p");
+            par[i].innerHTML = "New Paragraph " + i; 
+            x.appendChild(par[i++]);
+        
+            if (i >10){
+                var x = document.getElementsByTagName('p');
+                for (i = 0; i< x.length; i++){
+                    
+                    x[i].remove();
+                }                    
+                
+            }
+        }      
+    
+    </script>
+</head>
+<body>
+    
+    <input type="button" value="Создать параграф" onclick="createParagraph()">
+    <p id="par1"></p>
+    
+</body>
+</html>
